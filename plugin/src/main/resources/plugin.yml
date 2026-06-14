@@ -1,0 +1,42 @@
+name: HqngEconomy
+version: '${version}'
+main: tech.qhuyy.hqngEconomy.HqngEconomy
+api-version: '1.21.8'
+load: STARTUP
+authors: [ hqng05 ]
+website: https://qhuyy.tech
+description: "A multi-currency economy plugin for Paper"
+softdepend: [ PlaceholderAPI ]
+
+commands:
+  balance:
+    description: "Check your balance"
+    usage: "/balance"
+    aliases: [ bal, money ]
+    permission: hqng.economy.balance
+  gem:
+    description: "Check your gem balance"
+    usage: "/gem"
+    permission: hqng.economy.gem
+  pay:
+    description: "Pay another player"
+    usage: "/pay <player> <amount>"
+    permission: hqng.economy.pay
+  eco:
+    description: "Admin economy management"
+    usage: "/eco <give|set|reset|reload> <player> <currency> <amount>"
+    permission: hqng.economy.admin
+
+permissions:
+  hqng.economy.balance:
+    description: "Allows checking balance"
+    default: true
+  hqng.economy.gem:
+    description: "Allows checking gem balance"
+    default: true
+  hqng.economy.pay:
+    description: "Allows paying other players"
+    default: true
+  hqng.economy.admin:
+    description: "Allows admin economy commands"
+    default: op

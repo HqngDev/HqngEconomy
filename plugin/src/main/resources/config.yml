@@ -1,0 +1,40 @@
+# HqngEconomy Configuration
+# =========================
+
+# Number of decimal places to display for Money
+money-decimals: 2
+
+# Starting balance for new players
+starting:
+  money: 100.0
+  gem: 0
+
+# Currency display names
+currency:
+  money:
+    singular: "Coin"
+    plural: "Coins"
+  gem:
+    singular: "Gem"
+    plural: "Gems"
+
+# Database configuration
+database:
+  # Type: MYSQL or SQLITE
+  type: SQLITE
+
+  # MySQL settings (only used if type is MYSQL)
+  mysql:
+    host: localhost
+    port: 3306
+    database: hqng_economy
+    username: root
+    password: password
+    pool-size: 10
+
+  # SQLite settings (only used if type is SQLITE)
+  sqlite:
+    file: "economy.db"
+
+# Admin actions log (console + file)
+admin-log: false
