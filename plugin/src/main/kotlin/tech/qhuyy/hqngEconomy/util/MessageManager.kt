@@ -37,10 +37,16 @@ class MessageManager(private val plugin: JavaPlugin) {
         properties.clear()
 
         val file = plugin.dataFolder.resolve(resourcePath)
+
+        if (!file.exists()) {
+            // Copy default from jar to data folder on first run
+            plugin.saveResource(resourcePath, false)
+        }
+
         if (file.exists()) {
             file.inputStream().use { properties.load(it) }
         } else {
-            // Fall back to jar-bundled resource
+            // Last resort: read directly from jar
             plugin.getResource(resourcePath)?.use { properties.load(it) }
                 ?: plugin.logger.warning("Could not find $resourcePath anywhere!")
         }
