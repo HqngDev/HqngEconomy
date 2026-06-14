@@ -1,0 +1,34 @@
+# ── Gradle ──
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+
+# ── IDE ──
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.project
+.classpath
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
+
+# ── Compiled ──
+*.class
+*.jar
+*.war
+*.ear
+
+# ── Logs ──
+*.log
+
+# ── Local config ──
+*.local
